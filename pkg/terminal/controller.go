@@ -59,7 +59,7 @@ func (p *controller) Render(data *runtime.MemStats) {
 
 	fNormalize := func() int {
 		f := data.GCCPUFraction
-		if f < 0.01 {
+		if f < 0.01 && f > 0 {
 			for f < 1 {
 				f = f * 10.0
 			}
